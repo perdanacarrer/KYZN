@@ -9,6 +9,8 @@ const http = require('http');
 const { Server } = require('socket.io');
 
 const app = express();
+const seedFromExcel = require("./seedFromExcel");
+
 app.use(cors());
 app.use(bodyParser.json());
 
