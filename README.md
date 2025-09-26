@@ -121,3 +121,4 @@ After this seed, all product and invoice data come from the database.
   - backend/data/product_sold.json
   - backend/data/invoice.json
   These are also inserted into Postgres.
+- Frontend autocomplete uses the generated `product_sold.json`.
