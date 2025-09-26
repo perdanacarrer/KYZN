@@ -31,6 +31,12 @@ async function seedFromExcel() {
     const products = xlsx.utils.sheet_to_json(productSheet);
     const invoices = xlsx.utils.sheet_to_json(invoiceSheet);
 
+    // Save JSON for frontend autocomplete
+    const dataDir = path.join(__dirname, "data");
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+    fs.writeFileSync(path.join(dataDir, "invoice.json"), JSON.stringify(invoices, null, 2));
+    fs.writeFileSync(path.join(dataDir, "product_sold.json"), JSON.stringify(products, null, 2));
+
     for (let p of products) {
       await db.query(
         `INSERT INTO products (id, name, price, stock, picture)

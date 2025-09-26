@@ -116,3 +116,8 @@ On the first backend run, the server checks if the database is empty. If so, it 
   Required columns: `id`, `date`, `customer_name`, `salesperson_name`, `notes`, `total`
 
 After this seed, all product and invoice data come from the database.
+
+- On first run, backend reads InvoiceImport.xlsx and auto-extracts:
+  - backend/data/product_sold.json
+  - backend/data/invoice.json
+  These are also inserted into Postgres.
