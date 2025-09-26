@@ -106,3 +106,13 @@ How to Run
    ```
 2. Access frontend at http://localhost:3000
 
+## 📊 Excel Auto-Seeding (First Run)
+
+On the first backend run, the server checks if the database is empty. If so, it will read **InvoiceImport.xlsx** from the `backend/` folder and seed two tables:
+
+- **Products** → `products` table  
+  Required columns: `id`, `name`, `price`, `stock`, `picture`
+- **Invoices** → `invoices` table  
+  Required columns: `id`, `date`, `customer_name`, `salesperson_name`, `notes`, `total`
+
+After this seed, all product and invoice data come from the database.
